@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
-    <form action="{% url 'home_next' %}" method="post">
+{% extends "index.html "%}
+{% block content %}
+
+    <form  action="{% url 'home_next' %}" method="post">
         {% csrf_token %}
         <input name = "box">
         <input type="submit" value="Mandar">
     </form>
-    <div>
-        {% block content %}{% endblock %}
-    </div>
-</body>
-</html>
+
+          {% block content1 %}{% endblock %}
+
+{% endblock content %}
 
